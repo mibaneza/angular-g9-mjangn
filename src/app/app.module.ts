@@ -14,19 +14,22 @@ import { NavheaderComponent } from './components/navheader/navheader.component';
 import { NavfoneotherComponent } from './components/navfoneother/navfoneother.component';
 import { NavotherComponent } from './components/navother/navother.component';
 import { ArticlehomeComponent } from './components/articlehome/articlehome.component';
+import { ArticuloComponent } from './components/articulo/articulo.component';
 import { FootercComponent } from './components/footerc/footerc.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   imports:      [
     BrowserModule,
     FormsModule,
-    NgxGistModule 
+    NgxGistModule,
     HttpClientModule,
-    ReactiveFormsModule,  
+    ReactiveFormsModule,
+    AppRoutingModule  
   ],
   declarations: [ 
     AppComponent,
-    HelloComponent
+    HelloComponent,
     HomeComponent,
     AboutComponent,
     ProyectComponent,
@@ -35,6 +38,7 @@ import { ContactComponent } from './components/contact/contact.component';
     NavheaderComponent,
     ArticlehomeComponent,
     FootercComponent,
+    ArticuloComponent,
     ContactComponent ],
   bootstrap:    [ AppComponent ]
 })
