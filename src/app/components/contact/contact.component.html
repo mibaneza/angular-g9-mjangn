@@ -1,0 +1,156 @@
+<header class="{{size}}">
+    <navother [contactActive]="active"></navother>
+    <navheader [titulo]="titulo"></navheader>
+    <navfoneother [contactActive]="active"></navfoneother>
+</header>
+
+<article class="container ft my-5">
+    <div class="row justify-content-around my-4">
+
+        <div class="  col-sm-12 col-md-6">
+            <div class="card border-success mb-3  ">
+                <div class="card-header">
+                    <h4>Sígueme</h4>
+                </div>
+                <div class="card-body text-success ml-3 ">
+
+                    <h5 class="texto-card">Si quieres seguir más de cerca toda información sobre mí, por favor sígueme
+                        en los siguientes
+                        medios:</h5>
+
+                    <div class="card-text">
+                        <div class="row mb-3 mt-5 d-flex align-items-center">
+
+                            <img src="https://torttugacrush.github.io/img/img/svg/isotipo/linkedin.svg"
+                                class="ml-2 iconoContacto"><a class="btn btn-link "
+                                href="https://www.linkedin.com/in/marcos-alonso-iba%C3%B1ez-alcas-485933159/"
+                                role="button">
+                                <h5 class="ht hcontacto mb-0">Linkedin</h5>
+                            </a>
+                        </div>
+                        <div class="row  my-3 d-flex align-items-center">
+
+                            <img src="https://torttugacrush.github.io/img/img/svg/isotipo/fb.svg"
+                                class="ml-2 iconoContacto"><a class="btn btn-link  "
+                                href="https://www.facebook.com/Torttuga.crush" role="button">
+                                <h5 class="ht hcontacto mb-0">Facebook</h5>
+                            </a>
+                        </div>
+                        <!--    <div class="row  my-3 d-flex align-items-center">
+
+                         <img src="https://torttugacrush.github.io/img/img/svg/isotipo/github.svg"
+                                class="ml-2 iconoContacto"><a class="btn btn-link " href="#" role="button">
+                                <h5 class="ht hcontacto mb-0">Github</h5>
+                            </a>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="  col-sm-12 col-md-6">
+            <div class="card border-success mb-3  ">
+                <div class="card-header">
+                    <h4>Escríbeme</h4>
+                </div>
+                <div class="card-body text-success ml-3 ">
+
+                    <div class="card-text">
+                        <div class="container-fluid">
+                            <div style="color: blue;">
+                            </div>
+                            <div class="col-lg-9 col-md-12">
+                                <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+                                    <div class="form-group">
+                                        <label for="subjectControl">Nombre:</label>
+                                        <input type="text" class="form-control" id="subjectControl"
+                                            formControlName="name" placeholder="nombre" required
+                                            [ngClass]="{'is-invalid': name.touched &&  name.invalid,'is-valid': name.valid}">
+                                        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                                            class="invalid-feedback">
+                                            <span class="invalido px-1" *ngIf="name.errors.required">
+                                                Se requiere el nombre.<br />
+                                            </span>
+                                            <span class="invalido px-1" *ngIf="name.errors.minlength">
+                                                El nombre debe tener al menos 3 caracteres
+                                            </span>
+                                        </div>
+                                        <div class="valid-feedback">
+                                            <span class="valido px-1">Se ve bien!</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="emailControl">Email</label>
+                                        <input type="email" class="form-control" formControlName="email"
+                                            placeholder="example@example.con" required
+                                            [ngClass]="{'is-invalid': email.touched &&  email.invalid,'is-valid': email.valid}">
+
+                                        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                                            class="invalid-feedback">
+                                            <span class="invalido px-1" *ngIf="email.errors.required">
+                                                Se requiere el email.<br />
+                                            </span>
+
+                                            <span class="invalido px-1" *ngIf="email.errors.minlength">
+                                                El nombre debe tener al menos 5 caracteres.<br />
+                                            </span>
+                                            <span class="invalido px-1" *ngIf="email.errors.pattern">
+                                                El email debe ser una dirección de email válida.
+                                            </span>
+                                        </div>
+
+                                        <div class="valid-feedback">
+                                            <span class="valido px-1">Se ve bien el e-mail.!</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="subjectControl">Asunto:</label>
+                                        <input type="text" class="form-control" id="subjectControl"
+                                            formControlName="subject" placeholder="asunto" required
+                                            [ngClass]="{'is-invalid': subject.touched &&  subject.invalid,'is-valid': subject.valid}">
+                                        <div *ngIf="subject.invalid && (subject.dirty || subject.touched)"
+                                            class="invalid-feedback">
+                                            <span class="invalido px-1" *ngIf="subject.errors.required">
+                                                Se requiere el Asunto.<br />
+                                            </span>
+                                            <span class="invalido px-1" *ngIf="subject.errors.minlength">
+                                                El Asunto debe tener al menos 3 caracteres
+                                            </span>
+                                        </div>
+                                        <div class="valid-feedback">
+                                            <span class="valido px-1">Se ve bien!</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mensajeTxtAControl">Mensaje: </label>
+                                        <textarea class="form-control" id="mensajeTxtAControl" formControlName="message"
+                                            placeholder="Hola" required
+                                            [ngClass]="{'is-invalid': message.touched &&  message.invalid,'is-valid': message.valid}"></textarea>
+                                        <div *ngIf="message.invalid && (message.dirty || message.touched)"
+                                            class="invalid-feedback">
+                                            <span class="invalido px-1" *ngIf="message.errors.required">
+                                                Se requiere el Mensaje.<br />
+                                            </span>
+                                            <span class="invalido px-1" *ngIf="message.errors.minlength">
+                                                El Mensaje debe tener al menos 5 caracteres
+                                            </span>
+                                        </div>
+                                        <div class="valid-feedback">
+                                            <span class="valido px-1">Se ve bien!</span>
+                                        </div>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="submit" class="btn btn-success"
+                                            [disabled]="!contactForm.valid">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</article>

@@ -1,0 +1,27 @@
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark  bg-dark navb  d-flex justify-content-center align-items-center p-0   d-lg-none d-md-none">
+        <ul class="nav container  d-flex justify-content-around">
+            <li class="nav-item ">
+                <a class="bot6 {{homeActive}}" [routerLink]="['/home']" role="button"><i class="fas fa-home col-12 iconoM py-0"></i> 
+                    <h6 class="col-12 py-0 h6t">Inicio</h6>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="bot6 {{aboutActive}}"[routerLink]="['/about']" role="button"><i class="fas fa-address-card col-12 iconoM py-0"></i>
+                    <h6 class="col-12 py-0 h6t">Acerca</h6>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="bot6 t {{proyectActive}}"  [routerLink]="['/contact']"role="button"><i
+                        class="fas fa-comment-dots col-12 iconoM py-0"></i>
+                    <h6 class="col-12 py-0 h6t">Contacto</h6>
+                </a>
+            </li>
+            <li class="nav-item  ">
+                <a class="bot6 t {{contactActive}}"  [routerLink]="['/articulo']"role="button"><i
+                        class="fas fa-file-powerpoint col-12 iconoM py-0"></i>
+                    <h6 class="col-12 py-0 h6t">Proyectos</h6>
+                </a>
+            </li>
+        </ul>
+    </nav>

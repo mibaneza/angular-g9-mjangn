@@ -1,0 +1,57 @@
+<header class="{{size}}">
+    <navother [homeActive]="active"></navother>
+    <div class="container mt-5">
+        <div class="  row  margin-top-10 mx-3 d-flex align-items-center">
+            <div class="row col mx-2 ml-2 mr-0 d-none d-lg-block ">
+                <img src="https://torttugacrush.github.io/img/img/svg/isotipo/LogoCrush.png" height="300em"
+                    width="307em">
+            </div>
+            <div class="row col ">
+                <h1 class="Titulo display-4 text-capitalize">{{titulo}}</h1>
+                <h5 class="Titulo text-capitalize col-12">{{subtitulo}}</h5>
+                <a class="btn btn-info mx-3  my-3 border" [routerLink]="['/about']" role="button">Conocer Acerca de
+                    mi</a>
+                <a class="btn btn-info mx-3  my-3 border" [routerLink]="['/contact']" role="button">Contactame</a>
+            </div>
+        </div>
+    </div>
+    <navfoneother [homeActive]="active"></navfoneother>
+</header>
+
+<article class="container">
+
+    <h1 class="seccion__titurlo mt-5">Knowledge</h1>
+    <div class="d-flex justify-content-center">
+    <div class="row mb-5 col-12  justify-content-center">
+        <div class="row  col-5 col-sm-4 col-md-4 col-lg-3 col-xl-2 d-flex align-items-center my-2 " *ngFor="let lvl of niveles">
+            <img src="https://torttugacrush.github.io/img/img/svg/Letras/{{lvl.nivel}}.svg" class="mr-2"
+                height="25em" width="25em">
+            <h6 class="ht mb-0">{{lvl.nombresNivel}}</h6>
+        </div>
+    </div>
+</div>
+
+    <div class="row justify-content-around ">
+        <div class="card mb-3 col-12 col-sm-8 col-md-5 col-lg-5 mx-3" *ngFor="let card of TarjetasImgTitulo">
+            <div class="row no-gutters mx-1 my-2">
+                <div class="col-md-12 col-lg-4 py-4 d-flex justify-content-center">
+                    <img src="https://torttugacrush.github.io/img/img/svg/isotipo/{{card.isoTipos}}.svg"
+                        height="120em" width="120em">
+                </div>
+                <div class="col-md-12 col-lg-8">
+                    <div class="card-body ml-1 pl-3 pr-0">
+                        <h1 class="card-title  ht titulos d-sm-none d-md-none d-none d-lg-block d-xl-block">{{card.subTitulos}}</h1>
+                        <h1 class="card-title  ht titulos text-center d-lg-none d-xl-none">{{card.subTitulos}}</h1>
+                        <div class="row" *ngFor="let subCard of card.subNivelNombre">
+                            <img src="https://torttugacrush.github.io/img/img/svg/Letras/{{subCard.nivel}}.svg"
+                                class="mr-2" height="25em" width="25em">
+                            <h5 class="ht">{{subCard.nombre}}</h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</article>

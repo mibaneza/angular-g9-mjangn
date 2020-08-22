@@ -1,0 +1,24 @@
+<header class="{{size}}">
+    <navother [proyectActive]="active"></navother>
+    <navheader [titulo]="titulo"></navheader>
+    <navfoneother [proyectActive]="active"></navfoneother>
+</header>
+<main role="main" class="flex-shrink-0 mt-3">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="card  my-2 mx-2 col-sm-12 col-md-5 col-lg-5 col-xl-5" *ngFor="let cardProy of CardProyImgTitulo">
+                <div class="card-header text-center mt-3">
+                    <img src="https://torttugacrush.github.io/img/img/{{cardProy.isoTipo}}.png" height="200em"
+                        width="200em">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{cardProy.titulo}}</h5>
+                    <p class="card-text">{{cardProy.texto}}</p>
+                    <a *ngIf = "cardProy.habilitado != true" href="{{cardProy.urls}}"class="btn btn-info col-6 mt-3">{{cardProy.btn}}</a>
+            
+                    <a *ngIf = "cardProy.habilitado == true"  [routerLink]="[cardProy.urls]"class="btn btn-info col-6 mt-3">{{cardProy.btn}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

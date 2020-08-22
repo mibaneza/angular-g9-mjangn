@@ -1,0 +1,59 @@
+<header >
+    <navother ></navother>
+
+    <navfoneother ></navfoneother>
+</header>
+<style type="text/css">
+    img{
+        height: 500px;
+        
+        object-fit: cover;
+    }
+    .colorheader{
+        background-color: rgb(0, 0, 0);
+    }
+</style>
+<main role="main" class="flex-shrink-0  pb-5">
+       <div class="d-flex justify-content-center col-12 mx-0 px-0 colorheader" *ngIf="articulo.imgheaderlink != validatelink">
+     
+        <img   
+        class=" mt-1  col-md-7 col-lg-9" src="{{articulo.imgheaderlink}}"
+        alt="mi perfil"  >
+    </div>
+
+       
+
+    <div class="container pt-3">
+        <div class="card mb-3 col"> 
+            <h1 class="card-title  ht titulos my-4">{{articulo.titlearticle}}</h1>
+            <img *ngIf="!articulo.imgheaderlink == validate" src="articulo.imgheaderlink"
+                        alt="mi perfidawl" class="perfilimg mt-1 rounded float-left  border border-dark">
+
+            <div *ngFor="let parrafo of articulo.sectionr"> 
+              <div  *ngIf="!parrafo.linkcodetop == validatelink"> 
+                  awd
+              </div>
+              <script type="text/javascript" src="https://gist.github.com/mibaneza/bf02ec4540244bb01ddaef2be8973fa0.js"></script>
+              <p>
+                {{parrafo.content}}
+            </p>
+            <var>variable1</var> + <var>variable2</var> = <var>variable3</var>
+            </div>
+
+            <kbd>ctrl + c awdawdwad</kbd> para cortar
+            
+        </div>
+        <pre>
+            <code>
+                
+                    echo "Usar la etiqueta code mola";
+                
+            </code>
+            </pre>
+    </div>
+    {{ga}}
+</main>
+
+<div class="my-5 d-none d-lg-block">
+
+</div>

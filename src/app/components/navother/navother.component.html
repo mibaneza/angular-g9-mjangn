@@ -1,0 +1,22 @@
+<div class="container">
+    <nav class="navbar navbar-dark rounded ">
+        <a class="navbar-brand " [routerLink]="['/home']">Marcos Ibañez Alcas</a>
+        <ul class="nav justify-content-end ">
+            <li class="nav-item mx-2 d-none d-lg-block  d-md-block">
+                <a class="{{homeActive}}  btn btn-outline-light" [routerLink]="['/home']" role="button">Inicio</a>
+            </li>
+            <li class="nav-item mx-2 d-none d-lg-block  d-md-block">
+                <a class="{{aboutActive}}  btn btn-outline-light" [routerLink]="['/about']" role="button">Acerca de
+                    mi</a>
+            </li>
+            <li class="nav-item mx-2 d-none d-lg-block  d-md-block">
+                <a class="{{proyectActive}}  btn btn-outline-light " [routerLink]="['/articulo']"
+                    role="button">Proyects</a>
+            </li>
+            <li class="nav-item mx-2 d-none d-lg-block  d-md-block">
+                <a class="{{contactActive}}  btn btn-outline-light" [routerLink]="['/contact']"
+                    role="button">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+</div>
